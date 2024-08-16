@@ -1,0 +1,23 @@
+<div class="login">
+    <div class="card flex justify-content-center">
+        <p-card [style]="{ width: '360px' }">
+            <div>
+                <div class="flex flex-wrap justify-content-center align-items-center gap-2">
+                    <label class="w-6rem">Username</label>
+                    <input pInputText id="username" type="text" class="w-12rem" />
+                </div>
+                <div class="flex flex-wrap justify-content-center align-items-center gap-2">
+                    <label class="w-6rem">Password</label>
+                    <input pInputText id="password" type="password" class="w-12rem" />
+                </div>
+            </div>
+            
+            <ng-template pTemplate="footer">
+                <div class="flex gap-3 mt-1">
+                    <p-button label="Cancel" severity="secondary" class="w-full" styleClass="w-full" />
+                    <p-button label="Save" class="w-full" styleClass="w-full" />
+                </div>
+            </ng-template>
+        </p-card>
+    </div>
+</div>
