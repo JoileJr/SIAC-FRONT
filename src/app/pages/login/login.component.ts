@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
   value!: string;
+  loading: boolean = false;
 
+
+  Submit(): void {
+    this.loading = !this.loading;
+  }
 }
