@@ -15,13 +15,20 @@ import { ToastModule } from 'primeng/toast';
 import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
 import { InputTextModule } from 'primeng/inputtext';
-
+import { TopbarComponent } from './components/topbar/topbar.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { AvatarModule } from 'primeng/avatar';
+import { AvatarGroupModule } from 'primeng/avatargroup';
+import { ToolbarModule } from 'primeng/toolbar';
+import { SidebarModule } from 'primeng/sidebar';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    TopbarComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +42,11 @@ import { InputTextModule } from 'primeng/inputtext';
     ProgressBarModule,
     ToastModule,
     IconFieldModule,
-    InputIconModule
+    InputIconModule,
+    AvatarModule,
+    AvatarGroupModule,
+    ToolbarModule,
+    SidebarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
