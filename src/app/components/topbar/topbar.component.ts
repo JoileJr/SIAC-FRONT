@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-topbar',
@@ -6,20 +7,21 @@ import {Component, OnInit} from '@angular/core';
   styleUrl: './topbar.component.css'
 })
 export class TopbarComponent implements OnInit {
-  sidebarVisible: boolean = false;
-  items: any[] | undefined;
+  visible: boolean = false;
+
+  constructor(private router: Router) {
+  }
 
   ngOnInit() {
-    this.items = [
-      {
-        label: 'Update',
-        icon: 'pi pi-refresh'
-      },
-      {
-        label: 'Delete',
-        icon: 'pi pi-times'
-      }
-    ];
+  }
+
+  logoutDialog(): void {
+    this.visible = true;
+  }
+
+  logout(): void {
+    localStorage.clear();
+    this.router.navigate(['/login']);
   }
 
 }
