@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
     const {login, password} = this.formLogin.value;
     const canAuthenticate = this.validateLoginAndPassword(login, password)
 
-    if(!canAuthenticate){
+    if (!canAuthenticate) {
       this.loading = !this.loading;
       return
     }
@@ -46,11 +46,11 @@ export class LoginComponent implements OnInit {
   validateLoginAndPassword(login: string, password: string): boolean {
     let returnError = false;
     if (login === null) {
-      this.messageService.add({ severity: 'warn', summary: 'Atenção', detail: 'Login é obrigatório' });
+      this.messageService.add({severity: 'info', summary: 'Atenção', detail: 'Login é obrigatório'});
       returnError = true;
     }
     if (password === null) {
-      this.messageService.add({ severity: 'warn', summary: 'Atenção', detail: 'Senha é obrigatório' });
+      this.messageService.add({severity: 'info', summary: 'Atenção', detail: 'Senha é obrigatório'});
       returnError = true;
     }
     console.log('validou')

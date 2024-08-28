@@ -24,6 +24,9 @@ import { MenubarModule } from 'primeng/menubar';
 import {ReactiveFormsModule} from "@angular/forms";
 import {MessageService} from "primeng/api";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { TabMenuModule } from 'primeng/tabmenu';
+import { SignUpComponent } from './pages/sign-up/sign-up.component';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +34,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     LoginComponent,
     HomeComponent,
     TopbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +56,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     SidebarModule,
     MenubarModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    TabMenuModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

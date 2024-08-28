@@ -1,3 +1,11 @@
 <div class="card">
-    <p-menubar [model]="items" />
+  <p-toolbar>
+    <div class="p-toolbar-group-start">
+      <app-sidebar></app-sidebar>
+      <p-button icon="pi pi-home" [size]="'large'" [routerLink]="['/home']"/>
+    </div>
+    <div class="p-toolbar-group-end">
+      <p-button icon="pi pi-sign-out" [size]="'large'"/>
+    </div>
+  </p-toolbar>
 </div>

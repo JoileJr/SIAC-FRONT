@@ -1,5 +1,5 @@
 <div class="login">
-  <p-toast />
+  <p-toast/>
   <p-card class="card">
     <form [formGroup]="formLogin" (ngSubmit)="submit()">
       <div class="input-card">
@@ -14,8 +14,8 @@
         </p-floatLabel>
       </div>
       <div class="footer-bottoms">
-        <p-button *ngIf="!loading" label="Login" class="w-full" styleClass="w-full" type="submit" />
-        <p-button *ngIf="!loading" label="Cadastre-se" severity="success" class="w-full" styleClass="w-full"/>
+        <p-button *ngIf="!loading" label="Login" class="w-full" type="submit"/>
+        <p-button *ngIf="!loading" [routerLink]="['/sign-up']" label="Cadastre-se" severity="success" class="w-full"/>
       </div>
       <p-progressBar *ngIf="loading" mode="indeterminate" [style]="{'height': '10px'}"/>
     </form>
