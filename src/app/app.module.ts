@@ -26,6 +26,8 @@ import {MessageService} from "primeng/api";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { TabMenuModule } from 'primeng/tabmenu';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import { TieredMenuModule } from 'primeng/tieredmenu';
+import { TreeModule } from 'primeng/tree';
 
 
 @NgModule({
@@ -57,7 +59,9 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
     MenubarModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    TabMenuModule
+    TabMenuModule,
+    TieredMenuModule,
+    TreeModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

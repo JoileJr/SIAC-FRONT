@@ -1,3 +1,38 @@
 .button-sizenav {
   margin: 1rem;
 }
+
+.sidebar-menu-icon {
+  font-size: 20px;
+  margin-right: 1rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.custom-class {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  color: #3B82F6;
+  transition: background-color 150ms, color 150ms;
+  position: relative;
+}
+
+.custom-class:hover {
+  color: #ffffff;
+  background-color: #3B82F6;
+}
