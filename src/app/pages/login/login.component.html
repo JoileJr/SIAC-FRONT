@@ -1,22 +1,23 @@
 <div class="login">
-    <p-card class="card">
-        <div class="input-card">
-            <label>Login</label>
-            <form>
-                <p-iconField iconPosition="right" class="input">
-                    <p-inputIcon styleClass="pi pi-user" />
-                    <input type="text" pInputText placeholder="user" />
-                </p-iconField>
-                <p-floatLabel class="input">
-                    <p-password [feedback]="false" [toggleMask]="true"/>
-                    <label for="password">Password</label>
-                </p-floatLabel>
-            </form>
-        </div>
-        <div class="footer-bottoms">
-            <p-button *ngIf="!loading" label="Cadastre-se" severity="secondary" class="w-full" styleClass="w-full" />
-            <p-button *ngIf="!loading" label="Login" class="w-full" styleClass="w-full" (click)="Submit()" />
-        </div>
-        <p-progressBar *ngIf="loading" mode="indeterminate" [style]="{'height': '10px'}" />
-    </p-card>
+  <p-toast />
+  <p-card class="card">
+    <form [formGroup]="formLogin" (ngSubmit)="submit()">
+      <div class="input-card">
+        <label>Login</label>
+        <p-iconField iconPosition="right" class="input">
+          <p-inputIcon styleClass="pi pi-user"/>
+          <input type="text" pInputText placeholder="Login" formControlName="login"/>
+        </p-iconField>
+        <p-floatLabel class="input">
+          <p-password [feedback]="false" [toggleMask]="true" formControlName="password"/>
+          <label>Password</label>
+        </p-floatLabel>
+      </div>
+      <div class="footer-bottoms">
+        <p-button *ngIf="!loading" label="Login" class="w-full" styleClass="w-full" type="submit" />
+        <p-button *ngIf="!loading" label="Cadastre-se" severity="success" class="w-full" styleClass="w-full"/>
+      </div>
+      <p-progressBar *ngIf="loading" mode="indeterminate" [style]="{'height': '10px'}"/>
+    </form>
+  </p-card>
 </div>
