@@ -1,0 +1,27 @@
+<div class="login">
+  <p-toast/>
+  <p-card class="card">
+    <form [formGroup]="formRegister" (ngSubmit)="submit()">
+      <div class="input-card">
+        <label>Cadastre-se</label>
+        <p-iconField iconPosition="right" class="input">
+          <p-inputIcon styleClass="pi pi-user"/>
+          <input type="text" pInputText placeholder="Login" formControlName="login"/>
+        </p-iconField>
+        <p-floatLabel class="input">
+          <p-password [feedback]="false" [toggleMask]="true" formControlName="password"/>
+          <label>Password</label>
+        </p-floatLabel>
+        <p-floatLabel class="input">
+          <p-password [feedback]="false" [toggleMask]="true" formControlName="confirmPassword"/>
+          <label>Confirm Password</label>
+        </p-floatLabel>
+      </div>
+      <div class="footer-bottoms">
+        <p-button *ngIf="!loading" label="Cadastrar-se" class="w-full" type="submit"/>
+        <p-button *ngIf="!loading" label="Voltar" class="w-full" severity="danger" [routerLink]="['/login']"/>
+      </div>
+      <p-progressBar *ngIf="loading" mode="indeterminate" [style]="{'height': '10px'}"/>
+    </form>
+  </p-card>
+</div>
