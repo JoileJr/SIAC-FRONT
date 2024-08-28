@@ -5,16 +5,9 @@
       <p-button icon="pi pi-home" [size]="'large'" [routerLink]="['/home']"/>
     </div>
     <div class="p-toolbar-group-end">
-      <p-button icon="pi pi-sign-out" [size]="'large'" (onClick)="logoutDialog()"/>
+      <p-button icon="pi pi-sign-out" [size]="'large'" (onClick)="logout($event)"/>
     </div>
   </p-toolbar>
-  <p-dialog header="Sair?" [modal]="true" [(visible)]="visible" [style]="{ width: '25rem' }">
-    <div class="body">
-      <h4>Deseja realmente sair?</h4>
-    </div>
-    <div class="body">
-      <p-button label="Cancelar" severity="secondary" (onClick)="visible = false"/>
-      <p-button label="Sair" severity="danger" (onClick)="logout()"/>
-    </div>
-  </p-dialog>
+  <p-toast />
+  <p-confirmDialog />
 </div>

@@ -22,14 +22,14 @@ import {ToolbarModule} from 'primeng/toolbar';
 import {SidebarModule} from 'primeng/sidebar';
 import {MenubarModule} from 'primeng/menubar';
 import {ReactiveFormsModule} from "@angular/forms";
-import {MessageService} from "primeng/api";
+import {ConfirmationService, MessageService} from "primeng/api";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {TabMenuModule} from 'primeng/tabmenu';
 import {SignUpComponent} from './pages/sign-up/sign-up.component';
 import {TieredMenuModule} from 'primeng/tieredmenu';
 import {TreeModule} from 'primeng/tree';
 import {DialogModule} from 'primeng/dialog';
-
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
 
 @NgModule({
   declarations: [
@@ -63,9 +63,10 @@ import {DialogModule} from 'primeng/dialog';
     TabMenuModule,
     TieredMenuModule,
     TreeModule,
-    DialogModule
+    DialogModule,
+    ConfirmDialogModule
   ],
-  providers: [MessageService],
+  providers: [MessageService, ConfirmationService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
