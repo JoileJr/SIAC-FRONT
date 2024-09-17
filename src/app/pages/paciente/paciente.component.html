@@ -1,0 +1,38 @@
+<app-topbar></app-topbar>
+<p-table [value]="pacientes" [paginator]="true" [rows]="10" [rowsPerPageOptions]="[5, 10, 20]" [responsiveLayout]="'scroll'">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Nome</th>
+      <th>CPF</th>
+      <th>Telefone</th>
+      <th>Email</th>
+      <th>Data de Nascimento</th>
+      <th>Ações</th>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="body" let-paciente>
+    <tr>
+      <td>{{ paciente.nome }}</td>
+      <td>{{ paciente.cpf }}</td>
+      <td>{{ paciente.telefone }}</td>
+      <td>{{ paciente.email }}</td>
+      <td>{{ paciente.dataNascimento | date:'dd/MM/yyyy' }}</td>
+      <td>
+        <p-button icon="pi pi-pencil" class="p-button-sm p-button-rounded p-button-warning mr-2" (click)="openEditModal(paciente)" ariaLabel="Editar"></p-button>
+      </td>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="emptymessage">
+    <tr>
+      <td colspan="6">Nenhum paciente encontrado.</td>
+    </tr>
+  </ng-template>
+</p-table>
+<app-form-paciente
+  [modalVisivel]="modalVisivel"
+  [paciente]="pacienteSelecionado"
+  (fecharModalEvent)="fecharModal()"
+  (salvarPacienteEvent)="salvarPaciente($event)">
+</app-form-paciente>

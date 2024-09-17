@@ -30,6 +30,12 @@ import {TieredMenuModule} from 'primeng/tieredmenu';
 import {TreeModule} from 'primeng/tree';
 import {DialogModule} from 'primeng/dialog';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import { PacienteComponent } from './pages/paciente/paciente.component';
+import { AdminComponent } from './pages/admin/admin.component';
+import { TableModule } from 'primeng/table';
+import { FormPacienteComponent } from './pages/paciente/form-paciente/form-paciente.component';
+import { PacienteService } from './services/paciente/paciente.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -38,7 +44,10 @@ import {ConfirmDialogModule} from 'primeng/confirmdialog';
     HomeComponent,
     TopbarComponent,
     SidebarComponent,
-    SignUpComponent
+    SignUpComponent,
+    PacienteComponent,
+    AdminComponent,
+    FormPacienteComponent
   ],
   imports: [
     BrowserModule,
@@ -64,9 +73,16 @@ import {ConfirmDialogModule} from 'primeng/confirmdialog';
     TieredMenuModule,
     TreeModule,
     DialogModule,
-    ConfirmDialogModule
+    ConfirmDialogModule,
+    TabMenuModule,
+    TableModule,
+    HttpClientModule
   ],
-  providers: [MessageService, ConfirmationService],
+  providers: [
+    MessageService,
+    ConfirmationService,
+    PacienteService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
